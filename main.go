@@ -1,34 +1,24 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
 	name := "RGR"
-	stack := "MERN"
-	language := "Go"
-	experience := 2
-	work_hours := 12.5
-	consistant := true
-	isLearning := true
+	completedLessons := 3
+	totalLessons := 10
+	dailyStudyHours := 1.5
+	isConsistent := true
 
-	fmt.Println("Learning Profile")
-	fmt.Println("----------------")
-	fmt.Printf("Name: %s\n", name)
-	fmt.Printf("Current Stack: %s\n", stack)
-	fmt.Printf("Experience: %d years\n", experience)
-	fmt.Printf("Target Language: %s\n", language)
-	fmt.Printf("Daily Study Hours: %f\n", work_hours)
-	fmt.Printf("Consistant: %t\n", consistant)
+	remainingLessons := totalLessons - completedLessons
+	progressCheck := completedLessons >= 5
 
-	fmt.Println("Types")
-	fmt.Println("----------------")
-	fmt.Printf("name : %T \n", name)
-	fmt.Printf("current stack: %T \n", stack)
-	fmt.Printf("yearsOfExperience : %T \n", experience)
-	fmt.Printf("targetLanguage : %T \n", language)
-	fmt.Printf("dailyStudyHours : %T \n", work_hours)
-	fmt.Printf("isConsistent : %T \n", isLearning)
-
+	fmt.Println("Go Learning Score")
+	fmt.Println("-----------------")
+	fmt.Println("Name:", name)
+	fmt.Println("Completed Lessons:", completedLessons)
+	fmt.Println("Total Lessons:", totalLessons)
+	fmt.Println("Remaining Lessons:", remainingLessons)
+	fmt.Printf("Daily Study Hours: %.1f\n", dailyStudyHours)
+	fmt.Println("Consistent:", isConsistent)
+	fmt.Println("Progress Check:", progressCheck)
 }
