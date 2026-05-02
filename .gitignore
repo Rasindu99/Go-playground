@@ -1,0 +1,20 @@
+# Build output
+*.exe
+*.out
+*.test
+/bin/
+/dist/
+
+# Go workspace/cache
+*.cover
+coverage.out
+
+# Environment files
+.env
+.env.*
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
