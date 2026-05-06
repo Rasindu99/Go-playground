@@ -2,43 +2,36 @@ package main
 
 import "fmt"
 
+func printSkills(skills []string) {
+	for index, skill := range skills {
+		fmt.Printf("%d. %s\n", index+1, skill)
+	}
+}
+
 func main() {
 
-	fmt.Printf("The sum of 1, 2, 3, 4 and 5 is: %d\n", sum([]int{1, 3, 5, 8, 100}))
-
-	fmt.Printf("subtraction of 5 and 3.41 is: %.2f \n", sub(5, 3.41))
-
-	fmt.Println("Status of course completion: ", getStatus(3))
-
-	remainingLessons, progressPercentage, progressMessage := calculateProgress(3, 5)
-	fmt.Println("Remaining lessons:", remainingLessons)
-	fmt.Println("Progress percentage:", progressPercentage)
-	fmt.Println("Progress message:", progressMessage)
-}
-
-func sum(numbers []int) int {
-	total := 0
-
-	for _, value := range numbers {
-		total = total + value
-	}
-	return total
-}
-
-func sub(num1 int, num2 float64) float64 {
-	return float64(num1) - num2
-}
-
-func getStatus(completedLessons int) string {
-	if completedLessons >= 5 {
-		return "Congratulations! You have completed the course."
+	user := map[string]string{
+		"name":     "R G R",
+		"age":      "26",
+		"salary":   "1250$",
+		"attitude": "Never Ever Give Up",
 	}
 
-	return "Keep going! You have more lessons to complete."
-}
+	user["hobby"] = "Gaming"
+	user["salary"] = "1370$"
+	delete(user, "hobby")
 
-func calculateProgress(completedLessons int, totalLessons int) (int, int, string) {
-	remainingLessons := totalLessons - completedLessons
-	progressPercentage := completedLessons * 100 / totalLessons
-	return remainingLessons, progressPercentage, fmt.Sprintf("You have completed %d%% of the course.", progressPercentage)
+	fmt.Println(user)
+
+	for key, value := range user {
+		fmt.Printf("%s : %s\n", key, value)
+	}
+
+	value, exists := user["hobby"]
+
+	if exists {
+		fmt.Println("Hobby:", value)
+	} else {
+		fmt.Println("Hobby key does not exist in the user map.")
+	}
 }
